@@ -98,20 +98,20 @@ const ExpenseCharts = () => {
   }, []);
 
   return (
-    <div className="flex w-full gap-0">
-      <div className="chart-container text-center w-full">
-        <h2 className="text-lg font-semibold mb-4 text-[#ecdfcc]">Monthly Expenses</h2>
-        <div className="mx-auto" style={{ height: '400px', width: '100%', maxWidth: '1000px' }}>
-          <Line data={lineData} options={lineOptions} />
-        </div>
-      </div>
-      <div className="chart-container text-center w-full">
-        <h2 className="text-lg font-semibold mb-4 text-[#ecdfcc]">Expense Breakdown by Category</h2>
-        <div className="mx-auto" style={{ height: '400px', width: '80%', maxWidth: '600px' }}>
-          <Pie data={pieData} options={pieOptions} />
-        </div>
+    <div className="flex flex-col sm:flex-row w-full gap-4">
+    <div className="chart-container text-center flex-1">
+      <h2 className="text-lg font-semibold mb-4 text-[#ecdfcc]">Monthly Expenses</h2>
+      <div className="mx-auto" style={{ height: '400px', width: '100%' }}>
+        <Line data={lineData} options={lineOptions} />
       </div>
     </div>
+    <div className="chart-container text-center flex-1">
+      <h2 className="text-lg font-semibold mb-4 text-[#ecdfcc]">Expense Breakdown by Category</h2>
+      <div className="mx-auto" style={{ height: '400px', width: '100%' }}>
+        <Pie data={pieData} options={pieOptions} />
+      </div>
+    </div>
+  </div>
   );
 };
 
